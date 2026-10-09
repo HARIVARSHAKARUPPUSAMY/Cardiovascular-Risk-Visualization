@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Medical X-Ray Background utilities */
+.bg-xray-light {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('/images/cardiac_angiogram.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-xray-teal {
+  background-image: linear-gradient(135deg, rgba(13, 148, 136, 0.94), rgba(4, 120, 87, 0.94)), url('/images/cardiac_angiogram.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+  }
+}

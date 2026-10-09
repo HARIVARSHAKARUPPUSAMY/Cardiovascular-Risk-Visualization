@@ -1,0 +1,523 @@
+{
+  "organisations": {
+    "ORG-101": {
+      "org_id": "ORG-101",
+      "org_name": "Heart Health & Vascular Center",
+      "password_hash": "Cardio2026!",
+      "created_at": 1788969325,
+      "contact_email": "admin@heartcenter.org",
+      "department": "Department of Cardiology & Coronary Hemodynamics"
+    }
+  },
+  "settings": {
+    "ORG-101": {
+      "org_id": "ORG-101",
+      "green_threshold": 0.4,
+      "yellow_threshold": 0.65,
+      "hospital_name": "Heart Health & Vascular Center",
+      "lead_cardiologist": "Prof. Z. Alizadeh Sani, MD, FESC",
+      "units": "Standard (mg/dL, mmHg)"
+    }
+  },
+  "patients": [
+    {
+      "id": 3,
+      "org_id": "ORG-101",
+      "patient_id": "PT-9999",
+      "age": 60,
+      "gender": "Male",
+      "form_data": {
+        "patient_id": "PT-9999",
+        "age": 60,
+        "gender": "Male",
+        "diabetes": true,
+        "hypertension": true,
+        "symptoms": {
+          "chest_pain": true,
+          "chest_pain_type": "typical"
+        }
+      },
+      "prediction_results": {
+        "CAD": {
+          "task": "CAD",
+          "model_family": "CatBoost",
+          "probability": 0.9068,
+          "predicted_class": "CAD Present",
+          "confidence_percent": 90.7,
+          "threshold": 0.5
+        },
+        "LAD": {
+          "task": "LAD",
+          "model_family": "CatBoost",
+          "probability": 0.8688,
+          "predicted_class": "Stenotic",
+          "confidence_percent": 86.9,
+          "threshold": 0.5
+        },
+        "LCX": {
+          "task": "LCX",
+          "model_family": "LightGBM",
+          "probability": 0.7211,
+          "predicted_class": "Stenotic",
+          "confidence_percent": 72.1,
+          "threshold": 0.5
+        },
+        "RCA": {
+          "task": "RCA",
+          "model_family": "LightGBM",
+          "probability": 0.779,
+          "predicted_class": "Stenotic",
+          "confidence_percent": 77.9,
+          "threshold": 0.5
+        }
+      },
+      "lime_explanations": {
+        "CAD": [
+          {
+            "feature_condition": "Typical Chest Pain = 1 (Yes)",
+            "weight": 0.285,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.285
+          },
+          {
+            "feature_condition": "Region RWMA <= 0 (Normal)",
+            "weight": -0.145,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.145
+          },
+          {
+            "feature_condition": "DM = 1 (Diabetic)",
+            "weight": 0.105,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.105
+          },
+          {
+            "feature_condition": "ST Elevation / Depression = 0 (Normal)",
+            "weight": -0.095,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "Age > 58.00 (60 yrs)",
+            "weight": 0.095,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "LDL <= 130.00 (120 mg/dL)",
+            "weight": -0.08,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.08
+          },
+          {
+            "feature_condition": "BP > 130.00 (125 mmHg)",
+            "weight": 0.078,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.078
+          }
+        ],
+        "LAD": [
+          {
+            "feature_condition": "Typical Chest Pain = 1 (Yes)",
+            "weight": 0.285,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.285
+          },
+          {
+            "feature_condition": "Region RWMA <= 0 (Normal)",
+            "weight": -0.145,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.145
+          },
+          {
+            "feature_condition": "DM = 1 (Diabetic)",
+            "weight": 0.105,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.105
+          },
+          {
+            "feature_condition": "ST Elevation / Depression = 0 (Normal)",
+            "weight": -0.095,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "Age > 58.00 (60 yrs)",
+            "weight": 0.095,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "LDL <= 130.00 (120 mg/dL)",
+            "weight": -0.08,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.08
+          },
+          {
+            "feature_condition": "BP > 130.00 (125 mmHg)",
+            "weight": 0.078,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.078
+          }
+        ],
+        "LCX": [
+          {
+            "feature_condition": "Typical Chest Pain = 1 (Yes)",
+            "weight": 0.285,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.285
+          },
+          {
+            "feature_condition": "Region RWMA <= 0 (Normal)",
+            "weight": -0.145,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.145
+          },
+          {
+            "feature_condition": "DM = 1 (Diabetic)",
+            "weight": 0.105,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.105
+          },
+          {
+            "feature_condition": "ST Elevation / Depression = 0 (Normal)",
+            "weight": -0.095,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "Age > 58.00 (60 yrs)",
+            "weight": 0.095,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "LDL <= 130.00 (120 mg/dL)",
+            "weight": -0.08,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.08
+          },
+          {
+            "feature_condition": "BP > 130.00 (125 mmHg)",
+            "weight": 0.078,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.078
+          }
+        ],
+        "RCA": [
+          {
+            "feature_condition": "Typical Chest Pain = 1 (Yes)",
+            "weight": 0.285,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.285
+          },
+          {
+            "feature_condition": "Region RWMA <= 0 (Normal)",
+            "weight": -0.145,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.145
+          },
+          {
+            "feature_condition": "DM = 1 (Diabetic)",
+            "weight": 0.105,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.105
+          },
+          {
+            "feature_condition": "ST Elevation / Depression = 0 (Normal)",
+            "weight": -0.095,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "Age > 58.00 (60 yrs)",
+            "weight": 0.095,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "LDL <= 130.00 (120 mg/dL)",
+            "weight": -0.08,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.08
+          },
+          {
+            "feature_condition": "BP > 130.00 (125 mmHg)",
+            "weight": 0.078,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.078
+          }
+        ]
+      },
+      "created_at": 1791561337
+    },
+    {
+      "id": 1,
+      "org_id": "ORG-101",
+      "patient_id": "PT-8821",
+      "age": 63,
+      "gender": "Male",
+      "created_at": 1791554125,
+      "form_data": {
+        "patient_id": "PT-8821",
+        "age": 63,
+        "gender": "Male",
+        "diabetes": true,
+        "hypertension": true,
+        "smoking_history": "Current Smoker",
+        "family_history": true,
+        "previous_heart_events": true,
+        "blood_pressure": {
+          "systolic": 154,
+          "diastolic": 92,
+          "resting_pulse": 84
+        },
+        "cholesterol": {
+          "ldl": 168,
+          "hdl": 36,
+          "total_cholesterol": 242,
+          "triglycerides": 210
+        },
+        "symptoms": {
+          "chest_pain": true,
+          "chest_pain_type": "typical",
+          "breathlessness": true
+        },
+        "ecg_report": {
+          "st_elevation": false,
+          "st_depression": true,
+          "t_inversion": true,
+          "q_wave": false
+        },
+        "echocardiogram_report": {
+          "ejection_fraction": 42,
+          "rwma_present": true
+        },
+        "coronary_angiography": {
+          "performed": true
+        },
+        "lad_status": "75% proximal stenosis",
+        "lcx_status": "50% mid stenosis",
+        "rca_status": "Mild plaque < 30%",
+        "plaque_type": "mixed",
+        "number_vessels_affected": 2,
+        "max_stenosis_percentage": 75,
+        "cad_severity_cadradas": "CAD-RADS 4A (Severe)",
+        "final_cardiologist_diagnosis": "Significant CAD with 2-vessel involvement (LAD/LCX)"
+      },
+      "prediction_results": {
+        "CAD": {
+          "task": "CAD",
+          "model_family": "CatBoost",
+          "probability": 0.884,
+          "predicted_class": "CAD Present",
+          "confidence_percent": 88.4,
+          "threshold": 0.5
+        },
+        "LAD": {
+          "task": "LAD",
+          "model_family": "CatBoost",
+          "probability": 0.826,
+          "predicted_class": "Stenotic",
+          "confidence_percent": 82.6,
+          "threshold": 0.5
+        },
+        "LCX": {
+          "task": "LCX",
+          "model_family": "LightGBM",
+          "probability": 0.612,
+          "predicted_class": "Stenotic",
+          "confidence_percent": 61.2,
+          "threshold": 0.5
+        },
+        "RCA": {
+          "task": "RCA",
+          "model_family": "LightGBM",
+          "probability": 0.345,
+          "predicted_class": "Normal",
+          "confidence_percent": 34.5,
+          "threshold": 0.5
+        }
+      },
+      "lime_explanations": {
+        "CAD": [
+          {
+            "feature_condition": "Typical Chest Pain = 1 (Yes)",
+            "weight": 0.285,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.285
+          },
+          {
+            "feature_condition": "Region RWMA > 0 (Abnormal)",
+            "weight": 0.175,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.175
+          },
+          {
+            "feature_condition": "ST Depression = 1 (Abnormal)",
+            "weight": 0.14,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.14
+          },
+          {
+            "feature_condition": "LDL > 140.00 (168 mg/dL)",
+            "weight": 0.115,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.115
+          }
+        ],
+        "LAD": [
+          {
+            "feature_condition": "Typical Chest Pain = 1 (Yes)",
+            "weight": 0.245,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.245
+          },
+          {
+            "feature_condition": "Region RWMA > 0 (Abnormal)",
+            "weight": 0.165,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.165
+          }
+        ],
+        "LCX": [
+          {
+            "feature_condition": "Region RWMA > 0 (Abnormal)",
+            "weight": 0.135,
+            "direction": "Risk-Increasing",
+            "importance_abs": 0.135
+          }
+        ],
+        "RCA": [
+          {
+            "feature_condition": "RCA Territory Normal",
+            "weight": -0.155,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.155
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "org_id": "ORG-101",
+      "patient_id": "PT-8819",
+      "age": 49,
+      "gender": "Female",
+      "created_at": 1791532525,
+      "form_data": {
+        "patient_id": "PT-8819",
+        "age": 49,
+        "gender": "Female",
+        "diabetes": false,
+        "hypertension": false,
+        "smoking_history": "Never",
+        "family_history": false,
+        "previous_heart_events": false,
+        "blood_pressure": {
+          "systolic": 118,
+          "diastolic": 76,
+          "resting_pulse": 68
+        },
+        "cholesterol": {
+          "ldl": 98,
+          "hdl": 58,
+          "total_cholesterol": 172,
+          "triglycerides": 110
+        },
+        "symptoms": {
+          "chest_pain": false,
+          "chest_pain_type": "none",
+          "breathlessness": false
+        },
+        "ecg_report": {
+          "st_elevation": false,
+          "st_depression": false,
+          "t_inversion": false,
+          "q_wave": false
+        },
+        "echocardiogram_report": {
+          "ejection_fraction": 62,
+          "rwma_present": false
+        },
+        "coronary_angiography": {
+          "performed": false
+        },
+        "lad_status": "No significant stenosis",
+        "lcx_status": "Normal",
+        "rca_status": "Normal",
+        "plaque_type": "none",
+        "number_vessels_affected": 0,
+        "max_stenosis_percentage": 10,
+        "cad_severity_cadradas": "CAD-RADS 0 (Normal)",
+        "final_cardiologist_diagnosis": "No evidence of significant CAD"
+      },
+      "prediction_results": {
+        "CAD": {
+          "task": "CAD",
+          "model_family": "CatBoost",
+          "probability": 0.124,
+          "predicted_class": "Normal / No Significant CAD",
+          "confidence_percent": 12.4,
+          "threshold": 0.5
+        },
+        "LAD": {
+          "task": "LAD",
+          "model_family": "CatBoost",
+          "probability": 0.108,
+          "predicted_class": "Normal",
+          "confidence_percent": 10.8,
+          "threshold": 0.5
+        },
+        "LCX": {
+          "task": "LCX",
+          "model_family": "LightGBM",
+          "probability": 0.095,
+          "predicted_class": "Normal",
+          "confidence_percent": 9.5,
+          "threshold": 0.5
+        },
+        "RCA": {
+          "task": "RCA",
+          "model_family": "LightGBM",
+          "probability": 0.082,
+          "predicted_class": "Normal",
+          "confidence_percent": 8.2,
+          "threshold": 0.5
+        }
+      },
+      "lime_explanations": {
+        "CAD": [
+          {
+            "feature_condition": "Typical Chest Pain <= 0 (No)",
+            "weight": -0.22,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.22
+          },
+          {
+            "feature_condition": "Region RWMA <= 0 (Normal)",
+            "weight": -0.145,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.145
+          },
+          {
+            "feature_condition": "ST Elevation / Depression = 0 (Normal)",
+            "weight": -0.095,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.095
+          },
+          {
+            "feature_condition": "LDL <= 130.00 (98 mg/dL)",
+            "weight": -0.08,
+            "direction": "Protective/Normalizing",
+            "importance_abs": 0.08
+          }
+        ],
+        "LAD": [],
+        "LCX": [],
+        "RCA": []
+      }
+    }
+  ],
+  "next_patient_id": 4
+}

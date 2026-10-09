@@ -1,0 +1,6 @@
+{
+  "name": "Cardiovascular Risk Visualization & Prediction",
+  "description": "Clinical decision-support and educational tool featuring ML prediction on the Z-Alizadeh Sani dataset, interactive 3D coronary artery visualization, LIME explanations, and comprehensive reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
